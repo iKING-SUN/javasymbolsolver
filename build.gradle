@@ -1,12 +1,13 @@
 buildscript {
   repositories {
-    mavenCentral()
     jcenter()
+    mavenCentral()
+    maven{ url = "http://maven.aliyun.com/nexus/content/groups/public/" }
   }
 }
 
 plugins {
-  id 'net.saliman.cobertura' version '2.3.1'
+  id 'net.saliman.cobertura' version '2.3.0'
   id 'com.github.kt3k.coveralls' version '2.6.3'
 }
 
@@ -29,8 +30,9 @@ allprojects  {
   version = jssVersion
 
   repositories {
+    jcenter()
     mavenCentral()
-    
+    maven{ url = "http://maven.aliyun.com/nexus/content/groups/public/" }
     maven { url "http://repo.maven.apache.org/maven2" }
   }
 
@@ -46,7 +48,9 @@ subprojects {
   targetCompatibility = 1.8
 
   repositories {
+    jcenter()
     mavenCentral()
+    maven{ url = "http://maven.aliyun.com/nexus/content/groups/public/" }
   }
 
   task javadocJar(type: Jar) {
