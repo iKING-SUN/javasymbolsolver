@@ -45,6 +45,12 @@ public class JarTypeSolver implements TypeSolver {
         addPathToJar(pathToJar);
     }
 
+    public JarTypeSolver(String... pathToJars) throws IOException {
+        for(String path : pathToJars){
+            addPathToJar(path);
+        }
+    }
+
     public JarTypeSolver(InputStream jarInputStream) throws IOException {
         addPathToJar(jarInputStream);
     }
